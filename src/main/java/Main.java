@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
   private static Calculator calculator;
 
@@ -5,38 +7,40 @@ public class Main {
     calculator=new Calculator();
     int result=0;
     String resultStr="";
+    Scanner scanner = new Scanner(System.in);
 
-    if (args.length > 0) {
-      switch (args[0]) {
-        case "add":
-          result=calculator.add(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-          System.out.println(result);
-          break;
-        case "subtract":
-          result=calculator.subtract(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-          System.out.println(result);
-          break;
-        case "multiply":
-          result=calculator.multiply(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-          System.out.println(result);
-          break;
-        case "divide":
-          result=calculator.divide(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-          System.out.println(result);
-          break;
-        case "fibonacciNumberFinder":
-          result=calculator.fibonacciNumberFinder(Integer.parseInt(args[1]));
-          System.out.println(result);
-          break;
-        case "intToBinaryNumber":
-          resultStr=calculator.intToBinaryNumber(Integer.parseInt(args[1]));
-          System.out.println(resultStr);
-          break;
-        case "createUniqueID":
-          resultStr=calculator.createUniqueID(args[1]);
-          System.out.println(resultStr);
-          break;
-      }
+    System.out.println("Enter a command:");
+    String command = scanner.next();
+
+    switch (command) {
+      case "add":
+        result=calculator.add(Integer.parseInt(scanner.next()), Integer.parseInt(scanner.next()));
+        System.out.println(result);
+        break;
+      case "subtract":
+        result=calculator.subtract(Integer.parseInt(scanner.next()), Integer.parseInt(scanner.next()));
+        System.out.println(result);
+        break;
+      case "multiply":
+        result=calculator.multiply(Integer.parseInt(scanner.next()), Integer.parseInt(scanner.next()));
+        System.out.println(result);
+        break;
+      case "divide":
+        result=calculator.divide(Integer.parseInt(scanner.next()), Integer.parseInt(scanner.next()));
+        System.out.println(result);
+        break;
+      case "fibonacciNumberFinder":
+        result=calculator.fibonacciNumberFinder(Integer.parseInt(scanner.next()));
+        System.out.println(result);
+        break;
+      case "intToBinaryNumber":
+        resultStr=calculator.intToBinaryNumber(Integer.parseInt(scanner.next()));
+        System.out.println(resultStr);
+        break;
+      case "createUniqueID":
+        resultStr=calculator.createUniqueID(scanner.next());
+        System.out.println(resultStr);
+        break;
     }
   }
 }
