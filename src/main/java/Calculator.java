@@ -1,5 +1,6 @@
 import java.util.UUID;
 
+// Calculator class
 class Calculator {
 
     Calculator(){
